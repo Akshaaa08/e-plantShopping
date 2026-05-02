@@ -1,0 +1,153 @@
+.product-listing {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.listing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.listing-header h1 {
+  font-size: 2.6rem;
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+
+.listing-header p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+}
+
+/* Category Section */
+.category-section {
+  margin-bottom: 4rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.7rem;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+
+.category-divider {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--green-light), transparent);
+  border-radius: 2px;
+}
+
+/* Grid */
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Plant Card */
+.plant-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.plant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.plant-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--green-pale);
+}
+
+.plant-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.plant-card:hover .plant-img-wrap img {
+  transform: scale(1.05);
+}
+
+.plant-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.plant-name {
+  font-size: 1.2rem;
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.plant-desc {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.plant-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plant-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.add-btn {
+  background: var(--green-dark);
+  color: var(--white);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.add-btn:hover:not(:disabled) {
+  background: var(--green-mid);
+  transform: translateY(-1px);
+}
+
+.add-btn.added {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .listing-header h1 { font-size: 1.8rem; }
+  .plants-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .plant-img-wrap { height: 150px; }
+}
+
+@media (max-width: 420px) {
+  .plants-grid { grid-template-columns: 1fr; }
+}
